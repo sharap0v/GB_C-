@@ -64,10 +64,27 @@ for (int i = 0; i < length; i++)
     }
 }
 Console.WriteLine("Разница между максимальным и минимальным элементоv массива:" + (max - min));
-// Задача 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
-// [3 7 22 2 78] -> 76
 
+length = readConsole("Задача 37: Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве. \r\n Введите размер массива");
+array = createAndPrintRandomArray(length, int.MinValue, int.MaxValue);
+int[] result = new int[length/2 + length%2];
+Console.WriteLine(length/2 + length%2);
+for (int i = 0; i < length/2 + length%2; i++)
+{
+    Console.WriteLine(array[i] * array[length-1-i]);
+    result[i] = array[i] * array[length-1-i];
+}
+Console.Write("[");
+for (int i = 0; i < length/2 + length%2; i++)
+{
+    Console.Write(result[i]);
+    if(i==length/2 + length%2 -1){
+        break;
+    }
+        Console.Write(", ");
+}
+Console.Write("]");
 // Используйте NextDouble().
 // Доп. задачка:
 // Задача 37: Найдите произведение пар чисел в одномерном массиве. Парой считаем первый и последний элемент, второй и предпоследний и т.д. Результат запишите в новом массиве.
